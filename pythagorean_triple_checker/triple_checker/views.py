@@ -1,5 +1,7 @@
-from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
+
 
 def triple_checker(request):
-    return HttpResponse("Welcome to the Pythagorean Triple Checker!")
+    template = loader.get_template('index.html')
+    return HttpResponse(template.render())
